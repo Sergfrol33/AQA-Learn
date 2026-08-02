@@ -1,54 +1,21 @@
 package org.example;
 
+import org.example.animals.Cat;
+import org.example.bowl.Bowl;
 
 public class Main {
     public static void main(String[] args) {
-       Product[] products = new Product[5];
-        products[0] = new Product(
-                "Samsung S25 Ultra",
-                "01.02.2025",
-                "Samsung Corp.",
-                "Korea",
-                5599,
-                false
-        );
+        Cat[] cats = new Cat[4];
+        Bowl bowl = new Bowl(21);
+        cats[0] = new Cat("1");
+        cats[1] = new Cat("2");
+        cats[2] = new Cat("3");
+        cats[3] = new Cat("4");
 
-        products[1] = new Product(
-                "iPhone 16 Pro",
-                "15.09.2025",
-                "Apple Inc.",
-                "USA",
-                6299,
-                false
-        );
-
-        products[2] = new Product(
-                "Xiaomi 15",
-                "10.01.2025",
-                "Xiaomi",
-                "China",
-                3799,
-                true
-        );
-
-        products[3] = new Product(
-                "Google Pixel 10",
-                "20.08.2025",
-                "Google",
-                "USA",
-                4899,
-                true
-        );
-
-        products[4] = new Product(
-                "OnePlus 14",
-                "05.03.2025",
-                "OnePlus",
-                "China",
-                4299,
-                false
-        );
-        Park.Attraction attraction = new Park().new Attraction("Карусели", "10:00 - 20:00",200);
+        for (Cat cat : cats) {
+            cat.isSatiety(bowl.getSomeFood(cat.eat(7)));
+            System.out.println(cat.isSatiety());
+        }
     }
 
 }
