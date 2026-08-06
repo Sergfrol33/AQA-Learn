@@ -1,7 +1,7 @@
-package org.example;
+package org.lesson2_4;
 
-import org.example.animals.Cat;
-import org.example.bowl.Bowl;
+import org.lesson2_4.animals.Cat;
+import org.lesson2_4.bowl.Bowl;
 
 public class Main {
     public static void main(String[] args) {
