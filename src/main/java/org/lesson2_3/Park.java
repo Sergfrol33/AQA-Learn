@@ -1,4 +1,4 @@
-package org.example;
+package org.lesson2_3;
 
 public class Park {
 
