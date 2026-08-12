@@ -1,23 +1,54 @@
 package org.lesson2_2;
 
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        TestTask testTask = new TestTask();
-        testTask.printThreeWords();
-        testTask.checkSumSign();
-        testTask.printColor();
-        testTask.compareNumbers();
-        System.out.println(testTask.compareNumbersRange(10,19));
-        testTask.isPositiveNumberPrint(3);
-        System.out.println(testTask.isPositiveNumberBool(3));
-        testTask.printTextUntil(4,"anime otstoi");
-        System.out.println(testTask.isLeapYear(2012));
-        testTask.updateArray();
-        testTask.mapArray();
-        testTask.createMatrix();
-        System.out.println(Arrays.toString(testTask.createFillArray(4,1)));
+       Product[] products = new Product[5];
+        products[0] = new Product(
+                "Samsung S25 Ultra",
+                "01.02.2025",
+                "Samsung Corp.",
+                "Korea",
+                5599,
+                false
+        );
+
+        products[1] = new Product(
+                "iPhone 16 Pro",
+                "15.09.2025",
+                "Apple Inc.",
+                "USA",
+                6299,
+                false
+        );
+
+        products[2] = new Product(
+                "Xiaomi 15",
+                "10.01.2025",
+                "Xiaomi",
+                "China",
+                3799,
+                true
+        );
+
+        products[3] = new Product(
+                "Google Pixel 10",
+                "20.08.2025",
+                "Google",
+                "USA",
+                4899,
+                true
+        );
+
+        products[4] = new Product(
+                "OnePlus 14",
+                "05.03.2025",
+                "OnePlus",
+                "China",
+                4299,
+                false
+        );
+        Park.Attraction attraction = new Park().new Attraction("Карусели", "10:00 - 20:00",200);
     }
 
 }
