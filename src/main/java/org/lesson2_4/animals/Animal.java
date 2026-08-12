@@ -15,12 +15,14 @@ public class Animal {
         }
         System.out.println(this.name + " пробежал " + value + "м");
     }
+
     public void swim(int value){
         if (value < 0){
             System.out.println("Неправильное значение");
         }
         System.out.println(this.name + " проплыл " + value + "м");
     }
+
     public static int getCount() {
         return count;
     }
