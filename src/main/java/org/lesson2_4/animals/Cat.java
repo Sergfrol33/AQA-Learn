@@ -1,6 +1,7 @@
 package org.lesson2_4.animals;
 
 public class Cat extends Animal {
+
     private static int count;
     private boolean satiety = false;
 

@@ -2,6 +2,9 @@ package org.lesson2_4;
 
 import org.lesson2_4.animals.Cat;
 import org.lesson2_4.bowl.Bowl;
+import org.lesson2_4.figures.Circle;
+import org.lesson2_4.figures.Rectangle;
+import org.lesson2_4.figures.Triangle;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +19,42 @@ public class Main {
             cat.isSatiety(bowl.getSomeFood(cat.eat(7)));
             System.out.println(cat.isSatiety());
         }
-    }
 
+        Circle circle = new Circle(
+                5,
+                "Красный",
+                "Черный"
+        );
+        Rectangle rectangle = new Rectangle(
+                10,
+                5,
+                "Синий",
+                "Черный"
+        );
+        Triangle triangle = new Triangle(
+                3,
+                4,
+                5,
+                "Зеленый",
+                "Белый"
+        );
+
+        System.out.println("Круг:");
+        System.out.println("Периметр: " + circle.getPerimeter());
+        System.out.println("Площадь: " + circle.getArea());
+        System.out.println("Заливка: " + circle.getFillColor());
+        System.out.println("Граница: " + circle.getBorderColor());
+
+        System.out.println("\nПрямоугольник:");
+        System.out.println("Периметр: " + rectangle.getPerimeter());
+        System.out.println("Площадь: " + rectangle.getArea());
+        System.out.println("Заливка: " + rectangle.getFillColor());
+        System.out.println("Граница: " + rectangle.getBorderColor());
+
+        System.out.println("\nТреугольник:");
+        System.out.println("Периметр: " + triangle.getPerimeter());
+        System.out.println("Площадь: " + triangle.getArea());
+        System.out.println("Заливка: " + triangle.getFillColor());
+        System.out.println("Граница: " + triangle.getBorderColor());
+    }
 }

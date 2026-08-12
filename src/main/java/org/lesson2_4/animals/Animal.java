@@ -1,6 +1,7 @@
 package org.lesson2_4.animals;
 
 public class Animal {
+
     protected String name;
     private static int count;
 
