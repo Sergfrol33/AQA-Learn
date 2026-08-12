@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Park {
     private final ArrayList<Attraction> attractions = new ArrayList<Attraction>();
+
     public Park() {
     }
 
@@ -19,6 +20,7 @@ public class Park {
             attractions.add(this);
         }
     }
+
     public void getAttractions(){
         for (Attraction attraction : attractions) {
             System.out.println("Название: " + attraction.name);

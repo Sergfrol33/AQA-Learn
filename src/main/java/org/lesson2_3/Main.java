@@ -52,5 +52,4 @@ public class Main {
         park.new Attraction("Карусели", "10:00 - 20:00",200);
         park.getAttractions();
     }
-
 }
