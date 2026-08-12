@@ -48,7 +48,8 @@ public class Main {
                 4299,
                 false
         );
-        Park.Attraction attraction = new Park().new Attraction("Карусели", "10:00 - 20:00",200);
+        Park park = new Park();
+        park.new Attraction("Карусели", "10:00 - 20:00",200);
+        park.getAttractions();
     }
-
 }

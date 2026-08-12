@@ -24,7 +24,6 @@ public class TestTask {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
-
         }
     }
 
@@ -35,8 +34,7 @@ public class TestTask {
     }
 
     public boolean compareNumbersRange(int a, int b){
-        int sum = a + b;
-        return sum >= 10 && sum <= 20;
+        return a + b >= 10 && a + b <= 20;
     }
 
     public void isPositiveNumberPrint(int number){
