@@ -27,13 +27,19 @@ public class Cat extends Animal {
     }
 
     public void eat(Bowl bowl, int value) {
-        isSatiety(bowl.getSomeFood(value));
+        int received = bowl.getSomeFood(value);
+
+        if (received < value) {
+            int shortage = value - received;
+            System.out.println(this.name + ": еды не хватило, докладываем " + shortage);
+            bowl.setFood(shortage);
+            received += bowl.getSomeFood(shortage);
+        }
+        isSatiety(received >= value);
     }
 
-    private void isSatiety(int value) {
-        if (value > 0){
-            satiety = true;
-        }
+    private void isSatiety(boolean value) {
+        satiety = value;
     }
 
     public boolean isSatiety() {
