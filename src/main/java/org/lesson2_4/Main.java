@@ -21,15 +21,15 @@ public class Main {
         }
 
         Circle circle = new Circle(
-                5,
                 "Красный",
-                "Черный"
+                "Черный",
+                5
         );
         Rectangle rectangle = new Rectangle(
-                10,
-                5,
                 "Синий",
-                "Черный"
+                "Черный",
+                10,
+                5
         );
         Triangle triangle = new Triangle(
                 3,
