@@ -16,7 +16,7 @@ public class Main {
         cats[3] = new Cat("4");
 
         for (Cat cat : cats) {
-            cat.isSatiety(bowl.getSomeFood(cat.eat(7)));
+            cat.eat(bowl,7);
             System.out.println(cat.isSatiety());
         }
 

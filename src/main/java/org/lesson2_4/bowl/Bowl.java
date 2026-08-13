@@ -5,6 +5,7 @@ public class Bowl {
     private int food = 20;
 
     public Bowl(){}
+
     public Bowl(int food) {
         this.food = food;
     }
