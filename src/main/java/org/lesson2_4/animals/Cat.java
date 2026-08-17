@@ -1,5 +1,7 @@
 package org.lesson2_4.animals;
 
+import org.lesson2_4.bowl.Bowl;
+
 public class Cat extends Animal {
 
     private static int count;
@@ -24,14 +26,20 @@ public class Cat extends Animal {
         System.out.println(this.name + " не умеет плавать");
     }
 
-    public int eat(int value) {
-        return value;
+    public void eat(Bowl bowl, int value) {
+        int received = bowl.getSomeFood(value);
+
+        if (received < value) {
+            int shortage = value - received;
+            System.out.println(this.name + ": еды не хватило, докладываем " + shortage);
+            bowl.setFood(shortage);
+            received += bowl.getSomeFood(shortage);
+        }
+        isSatiety(received >= value);
     }
 
-    public void isSatiety(int value) {
-        if (value > 0){
-            satiety = true;
-        }
+    private void isSatiety(boolean value) {
+        satiety = value;
     }
 
     public boolean isSatiety() {

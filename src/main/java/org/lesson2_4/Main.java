@@ -16,20 +16,20 @@ public class Main {
         cats[3] = new Cat("4");
 
         for (Cat cat : cats) {
-            cat.isSatiety(bowl.getSomeFood(cat.eat(7)));
+            cat.eat(bowl,7);
             System.out.println(cat.isSatiety());
         }
 
         Circle circle = new Circle(
-                5,
                 "Красный",
-                "Черный"
+                "Черный",
+                5
         );
         Rectangle rectangle = new Rectangle(
-                10,
-                5,
                 "Синий",
-                "Черный"
+                "Черный",
+                10,
+                5
         );
         Triangle triangle = new Triangle(
                 3,

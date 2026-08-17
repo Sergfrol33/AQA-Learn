@@ -1,16 +1,14 @@
 package org.lesson2_4.figures;
 
-public class Circle implements Shape {
+public class Circle extends BaseShape {
 
     private double radius;
-    private String fillColor;
-    private String borderColor;
 
-    public Circle(double radius, String fillColor, String borderColor) {
+    public Circle(String fillColor, String borderColor, double radius) {
+        super(fillColor, borderColor);
         this.radius = radius;
-        this.fillColor = fillColor;
-        this.borderColor = borderColor;
     }
+
 
     @Override
     public double getArea() {
