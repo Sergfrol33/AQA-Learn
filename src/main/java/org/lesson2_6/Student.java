@@ -30,7 +30,8 @@ public class Student {
     public String getName() {
         return name;
     }
-    public void goToNewCourse(){
-        course++;
+
+    public void setCourse(int course) {
+        this.course = course;
     }
 }
