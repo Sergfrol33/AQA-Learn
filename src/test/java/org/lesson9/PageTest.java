@@ -42,7 +42,8 @@ public class PageTest extends BaseTest {
         By title = By.xpath(
                 "//h2[contains(., 'Онлайн пополнение') and contains(., 'без комиссии')]"
         );
-        driver.findElement(title);
+        var element = driver.findElement(title);
+        assertTrue(element.isDisplayed(),"Блок не отображается");
     }
 
     @DisplayName("Проверяем наличие alt логотипов платежных систем")
@@ -128,12 +129,11 @@ public class PageTest extends BaseTest {
         sumInput.sendKeys("100");
         emailInput.sendKeys("sergfrol33@gmail.com");
         submitButton.click();
-        wait.until(
-                ExpectedConditions.presenceOfElementLocated(
-                        By.cssSelector("iframe.payment-widget-iframe")
-                )
-        );
 
-
+        var isPaymentOpened = wait.until(ExpectedConditions.or(
+                ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className("payment-widget-iframe")),
+                ExpectedConditions.urlContains("checkout.bepaid.by")
+        ));
+        assertTrue(isPaymentOpened,"Окно оплаты не открылось");
     }
 }
