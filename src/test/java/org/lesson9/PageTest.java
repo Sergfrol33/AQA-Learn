@@ -25,7 +25,7 @@ public class PageTest extends BaseTest {
     void openPage() {
         driver.get("https://www.mts.by");
         var duration = Duration.ofSeconds(10);
-        wait = new WebDriverWait(driver, duration.getSeconds());
+        wait = new WebDriverWait(driver, duration);
     }
 
     @DisplayName("Проверяем открытие сайта")

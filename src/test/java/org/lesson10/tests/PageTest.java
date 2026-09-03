@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,8 +24,8 @@ public class PageTest extends BaseTest {
     @BeforeEach
     void openPage() {
         driver.get("https://www.mts.by");
-        var duration = Duration.ofSeconds(10);
-        wait = new WebDriverWait(driver, duration.getSeconds());
+        var duration = Duration.ofSeconds(20);
+        wait = new WebDriverWait(driver, duration);
         mainPage = new MainPage(driver, wait);
     }
 
@@ -50,7 +50,7 @@ public class PageTest extends BaseTest {
         var items = mainPage.replenishmentForm.getPartnerLogosInfo();
         var actualAlts = items.stream()
                 .map(PartnerLogoInfo::getAltText)
-                .collect(Collectors.toList());
+                .toList();
         assertAll(() -> assertEquals(expectedPartners.size(), items.size(), "Количество партнеров не совпадает"),
                 () -> assertTrue(actualAlts.containsAll(expectedPartners),
                         "Ожидалось: " + expectedPartners + ", найдено: " + actualAlts));

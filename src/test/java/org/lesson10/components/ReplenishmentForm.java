@@ -1,5 +1,6 @@
 package org.lesson10.components;
 
+import io.qameta.allure.Step;
 import org.lesson10.models.PartnerLogoInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,11 +34,13 @@ public class ReplenishmentForm {
         this.wait = wait;
     }
 
+    @Step("Выбирается оплата услуги")
     public void selectPaymentType(String value) {
         var select = new Select(driver.findElement(paymentSelectLocator));
         select.selectByValue(value);
     }
 
+    @Step("Проверить отображение заголовка Онлайн пополнение без комиссии")
     public boolean titleIsDisplayed() {
         return driver.findElement(titleLocator).isDisplayed();
     }
@@ -49,28 +52,34 @@ public class ReplenishmentForm {
         return this;
     }
 
-
+    @Step("Кликнуть на ссылку")
     public void clickOnLink(){
         var element = driver.findElement(linkLocator);
         element.click();
     }
+
+    @Step("Берем атрибут {value} из ссылки")
     public String getLinkAttribute(String value){
         return driver.findElement(linkLocator).getAttribute(value);
     }
 
+    @Step("Берем атрибут {attributeName} поля {fieldName} из формы {serviceType}")
     public String getFieldAttribute(String serviceType, String fieldName, String attributeName) {
         By dynamicLocator = By.id(serviceType + "-" + fieldName);
         return driver.findElement(dynamicLocator).getAttribute(attributeName);
     }
 
+    @Step("Клик в форме")
     public void submit() {
         driver.findElement(submitButtonLocator).click();
     }
 
+    @Step("Переключение на форму оплаты")
     public void toggleToPaymentForm(){
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(paymentFrameLocator));
     }
 
+    @Step("Проверить открытие формы оплаты")
     public boolean isOpenPaymentForm() {
         return wait.until(ExpectedConditions.or(
                 ExpectedConditions.frameToBeAvailableAndSwitchToIt(paymentFrameLocator),
@@ -78,6 +87,7 @@ public class ReplenishmentForm {
         ));
     }
 
+    @Step("Заполнить поля в форме")
     private void fillField(By locator, String value) {
         if (value != null) {
             var element = driver.findElement(locator);
@@ -86,6 +96,7 @@ public class ReplenishmentForm {
         }
     }
 
+    @Step("Собираются все логотипы в форме заполнения информации")
     public List<PartnerLogoInfo> getPartnerLogosInfo() {
         wait.until(ExpectedConditions.presenceOfElementLocated(partnersListLocator));
         List<WebElement> logoElements = driver.findElements(partnerImgLocator);
