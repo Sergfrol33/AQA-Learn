@@ -1,4 +1,4 @@
-package org.models;
+package org.lesson8.models;
 
 public class Person {
     private int id;

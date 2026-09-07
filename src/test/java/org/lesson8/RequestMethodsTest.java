@@ -1,7 +1,7 @@
-package org;
+package org.lesson8;
 
 import org.junit.jupiter.api.Test;
-import org.models.Person;
+import org.lesson8.models.Person;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
