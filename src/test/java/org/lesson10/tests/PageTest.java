@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.lesson10.base.BaseTest;
 import org.lesson10.models.PartnerLogoInfo;
+import org.lesson10.pages.HelpPage;
 import org.lesson10.pages.MainPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,6 +21,7 @@ public class PageTest extends BaseTest {
 
     private WebDriverWait wait;
     private MainPage mainPage;
+    private HelpPage helpPage;
 
     @BeforeEach
     void openPage() {
@@ -27,6 +29,7 @@ public class PageTest extends BaseTest {
         var duration = Duration.ofSeconds(10);
         wait = new WebDriverWait(driver, duration.getSeconds());
         mainPage = new MainPage(driver, wait);
+        helpPage = new HelpPage(driver, wait);
     }
 
     @DisplayName("Проверяем открытие сайта")
@@ -75,12 +78,12 @@ public class PageTest extends BaseTest {
         assertTrue(href.contains("/help/poryadok-oplaty-i-bezopasnost-internet-platezhey"));
     }
 
-    @DisplayName("Проверяем ссылку 'Подробнее о сервисе'")
+    @DisplayName("Проверяем переход по ссылке 'Подробнее о сервисе'")
     @Test
     public void checkIsLinkClickable() {
         mainPage.cookieBanner.acceptIfPresent();
         mainPage.replenishmentForm.clickOnLink();
-        assertEquals("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/", driver.getCurrentUrl());
+        assertTrue(helpPage.paymentProcedureInfo.isPaymentProcedureInfo(), "Страница не отображается");
     }
 
     @DisplayName("Проверяем валидный инпут формы")

@@ -1,4 +1,4 @@
-package org.lesson10.components;
+package org.lesson10.steps;
 
 import org.lesson10.models.PartnerLogoInfo;
 import org.openqa.selenium.By;

@@ -1,8 +1,8 @@
 package org.lesson10.pages;
 
-import org.lesson10.components.CookieBanner;
-import org.lesson10.components.PaymentForm;
-import org.lesson10.components.ReplenishmentForm;
+import org.lesson10.steps.CookieBanner;
+import org.lesson10.steps.PaymentForm;
+import org.lesson10.steps.ReplenishmentForm;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

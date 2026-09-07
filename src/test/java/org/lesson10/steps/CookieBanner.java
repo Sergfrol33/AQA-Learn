@@ -1,4 +1,4 @@
-package org.lesson10.components;
+package org.lesson10.steps;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -24,7 +24,6 @@ public class CookieBanner {
             cookieAccept.click();
             wait.until(ExpectedConditions.invisibilityOfElementLocated(cookieWrapper));
         } catch (TimeoutException ignored) {
-            // Баннера нет — ну и ладно
         }
     }
 }
