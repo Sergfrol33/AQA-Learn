@@ -1,4 +1,4 @@
-package org.lesson10.components;
+package org.lesson10.steps;
 
 import io.qameta.allure.Step;
 import org.lesson10.models.PartnerLogoInfo;
@@ -12,19 +12,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PaymentForm {
-    public final WebDriver driver;
-    public final WebDriverWait wait;
-    public final By buttonLocator = By.xpath("//button[contains(., 'Оплатить')]");
-    public final By titleLocator = By.xpath("//*[@class='pay-description__cost']/span");
-    public final By phoneLocator = By.xpath("//*[@class='pay-description__text']/span");
-    public final By creditCardLocator = By.xpath("//label[text()='Номер карты']");
-    public final By expirationDateLocator = By.xpath("//label[text()='Срок действия']");
-    public final By cvcLocator = By.xpath("//label[text()='CVC']");
-    public final By cardNameLocator = By.xpath("//label[text()='Имя и фамилия на карте']");
-    public final By partnersImgLocator = By.cssSelector("div.cards-brands__container img");
-    public final By partnersListLocator = By.className("cards-brands__container");
-    public final By appleSvgLocator = By.cssSelector(".apple-pay-button svg");
-    public final By googleButtonLocator = By.id("gpay-button-online-api-id");
+    private final WebDriver driver;
+    private final WebDriverWait wait;
+    private final By buttonLocator = By.xpath("//button[contains(., 'Оплатить')]");
+    private final By titleLocator = By.xpath("//*[@class='pay-description__cost']/span");
+    private final By phoneLocator = By.xpath("//*[@class='pay-description__text']/span");
+    private final By creditCardLocator = By.xpath("//label[text()='Номер карты']");
+    private final By expirationDateLocator = By.xpath("//label[text()='Срок действия']");
+    private final By cvcLocator = By.xpath("//label[text()='CVC']");
+    private final By cardNameLocator = By.xpath("//label[text()='Имя и фамилия на карте']");
+    private final By partnersImgLocator = By.cssSelector("div.cards-brands__container img");
+    private final By partnersListLocator = By.className("cards-brands__container");
+    private final By appleSvgLocator = By.cssSelector(".apple-pay-button svg");
+    private final By googleButtonLocator = By.id("gpay-button-online-api-id");
 
     public PaymentForm(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;

@@ -1,4 +1,4 @@
-package org.lesson10.components;
+package org.lesson10.steps;
 
 import io.qameta.allure.Step;
 import org.lesson10.models.PartnerLogoInfo;
